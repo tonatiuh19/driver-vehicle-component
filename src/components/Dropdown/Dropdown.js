@@ -3,8 +3,9 @@ import { useQuery } from "@apollo/client";
 import { Text, View, Keyboard } from "react-native";
 import SearchableDropdown from "react-native-searchable-dropdown";
 import styles from "./Dropdown.style";
-import queries, { GET_VEHICLE_YEARS } from "../../apollo/queries";
+import queries from "../../apollo/queries";
 import ResponseToObject from "../../utils/ResponseToObject";
+import Loading from "../Loading/Loading";
 
 const Dropdown = ({
   placeholder = "",
@@ -38,7 +39,9 @@ const Dropdown = ({
     return (
       <View style={styles.container}>
         {loading || error ? (
-          <Text>Loading</Text>
+          <View style={styles.containerLoading}>
+            <Loading />
+          </View>
         ) : (
           <View style={styles.containerInput}>
             <Text style={styles.text}>{placeholder}:</Text>

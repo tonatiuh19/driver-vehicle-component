@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ScrollView, View, Text, SafeAreaView } from "react-native";
+import { View, SafeAreaView } from "react-native";
 import styles from "./Home.style";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import Title from "../../components/Title/Title";

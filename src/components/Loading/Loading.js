@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
-import { Text, View, Animated, Easing, Image } from "react-native";
+import { View, Animated, Easing } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
-import styles from "./Loading.stye";
+import styles from "react-native-tags/Tags/styles";
 
 const Loading = () => {
   const rotateValueHolder = new Animated.Value(0);
@@ -14,7 +15,7 @@ const Loading = () => {
     rotateValueHolder.setValue(0);
     Animated.timing(rotateValueHolder, {
       toValue: 1,
-      duration: 600,
+      duration: 800,
       easing: Easing.linear,
       useNativeDriver: false,
     }).start(() => startImageRotateFunction());
@@ -25,13 +26,14 @@ const Loading = () => {
   }, []);
 
   return (
-    <View>
-      <Image
-        source={{
-          uri: "https://media.giphy.com/media/ZcXPePhE8h3GrdHRcP/giphy.gif",
+    <View data-testid="Loading" style={styles.container}>
+      <Animated.View
+        style={{
+          transform: [{ rotate: RotateData }],
         }}
-        style={{ width: "50%", height: "50%" }}
-      />
+      >
+        <FontAwesome5 name="truck-moving" size={24} color="black" />
+      </Animated.View>
     </View>
   );
 };
