@@ -14,6 +14,7 @@ const Dropdown = ({
   handleDropdownOutput,
 }) => {
   const [placeHolder, setPlaceHolder] = useState(placeholder);
+  const [reset, setReset] = useState(false);
   const [items, setItems] = useState([]);
   const { loading, error, data } = useQuery(queries(query), {
     variables: input,
@@ -25,6 +26,9 @@ const Dropdown = ({
     }
     if (query === "vehicleTrims") {
       Keyboard.dismiss();
+    }
+    if (!disable) {
+      setPlaceHolder(placeholder);
     }
   }, [loading, data]);
 
@@ -52,7 +56,7 @@ const Dropdown = ({
               defaultIndex={2}
               placeholder={placeHolder}
               placeholderTextColor={"#222"}
-              resetValue={false}
+              resetValue={reset}
               underlineColorAndroid="transparent"
             />
           </View>
