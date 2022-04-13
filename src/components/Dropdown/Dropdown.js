@@ -12,6 +12,7 @@ const Dropdown = ({
   query = "",
   input = {},
   disable = false,
+  style = true,
   handleDropdownOutput,
 }) => {
   const [placeHolder, setPlaceHolder] = useState(placeholder);
@@ -31,7 +32,7 @@ const Dropdown = ({
     if (!disable) {
       setPlaceHolder(placeholder);
     }
-  }, [loading, data]);
+  }, [loading, data, style]);
 
   if (disable) {
     return null;
@@ -43,7 +44,9 @@ const Dropdown = ({
             <Loading />
           </View>
         ) : (
-          <View style={styles.containerInput}>
+          <View
+            style={style ? styles.containerInput : styles.containerInputDark}
+          >
             <Text style={styles.text}>{placeholder}:</Text>
             <SearchableDropdown
               onItemSelect={(item) => {

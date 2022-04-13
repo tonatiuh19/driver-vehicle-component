@@ -5,8 +5,10 @@ import Dropdown from "../../components/Dropdown/Dropdown";
 import Title from "../../components/Title/Title";
 import Truck from "../../components/Truck/Truck";
 import Button from "../../components/Button/Button";
+import SwitchTheme from "../../components/SwitchTheme/SwitchTheme";
 
 const Home = () => {
+  const [theme, setTheme] = useState(true);
   const [vehicleYearsData, setVehicleYearsData] = useState({
     placeholder: "Chosse a Year",
     disable: false,
@@ -151,10 +153,18 @@ const Home = () => {
     });
   };
 
+  const handleSwitch = (status) => {
+    setTheme(status);
+  };
+
   return (
-    <SafeAreaView style={styles.container} overScrollMode>
+    <SafeAreaView
+      style={theme ? styles.container : styles.containerDark}
+      overScrollMode
+    >
       <View style={styles.containerTitle}>
-        <Title />
+        <Title style={theme} />
+        <SwitchTheme handleSwitch={handleSwitch} />
       </View>
       <View style={styles.containerDrops}>
         <Dropdown
@@ -186,10 +196,10 @@ const Home = () => {
         />
       </View>
       <View style={styles.containerTruck}>
-        <Truck statusData={statusDataTruck} />
+        <Truck statusData={statusDataTruck} style={theme} />
       </View>
       <View style={styles.containerButton}>
-        <Button text="Reset" handleOnclick={handleOnclick} />
+        <Button text="Reset" handleOnclick={handleOnclick} style={theme} />
       </View>
     </SafeAreaView>
   );

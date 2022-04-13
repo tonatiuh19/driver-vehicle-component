@@ -2,10 +2,12 @@ import React from "react";
 import { View, Text } from "react-native";
 import styles from "./Title.style";
 
-const Title = () => {
+const Title = ({ style = false }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Driver Vehicle Component</Text>
+      <Text style={style ? styles.text : styles.textDark}>
+        Driver Vehicle Component
+      </Text>
     </View>
   );
 };

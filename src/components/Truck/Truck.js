@@ -4,7 +4,7 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import ButtonTruck from "../ButtonTruck/ButtonTruck";
 import styles from "./Truck.style";
 
-const Truck = ({ statusData }) => {
+const Truck = ({ statusData, style }) => {
   const [vehicleData, setVehicleData] = useState(statusData);
 
   useEffect(() => {
@@ -22,7 +22,11 @@ const Truck = ({ statusData }) => {
             <ButtonTruck text={vehicleData.vehicleMakes.text} />
           </View>
           <View style={styles.truckIcon}>
-            <FontAwesome5 name="truck-moving" size={50} color="black" />
+            {style ? (
+              <FontAwesome5 name="truck-moving" size={50} color="black" />
+            ) : (
+              <FontAwesome5 name="truck-moving" size={50} color="white" />
+            )}
           </View>
           <View style={styles.truckModel}>
             <ButtonTruck text={vehicleData.vehicleModels.text} />

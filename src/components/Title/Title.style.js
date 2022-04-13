@@ -13,6 +13,13 @@ const styles = StyleSheet.create({
     paddingLeft: 30,
     paddingRight: 30,
   },
+  textDark: {
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 20,
+    paddingLeft: 30,
+    paddingRight: 30,
+  },
 });
 
 export default styles;

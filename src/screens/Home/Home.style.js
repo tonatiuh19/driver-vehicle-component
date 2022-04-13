@@ -7,7 +7,15 @@ const styles = StyleSheet.create({
     paddingTop: 50,
     flex: 1,
   },
-  containerTitle: {},
+  containerDark: {
+    backgroundColor: "black",
+    flexDirection: "column",
+    paddingTop: 50,
+    flex: 1,
+  },
+  containerTitle: {
+    flexDirection: "row",
+  },
   containerDrops: {},
   containerTruck: {
     paddingTop: 15,
