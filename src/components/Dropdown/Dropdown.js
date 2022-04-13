@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
-import { Text, View, SafeAreaView } from "react-native";
+import { Text, View, Keyboard } from "react-native";
 import SearchableDropdown from "react-native-searchable-dropdown";
 import styles from "./Dropdown.style";
 import queries, { GET_VEHICLE_YEARS } from "../../apollo/queries";
@@ -23,6 +23,9 @@ const Dropdown = ({
     if (loading === false && data) {
       setItems(ResponseToObject(data, query));
     }
+    if (query === "vehicleTrims") {
+      Keyboard.dismiss();
+    }
   }, [loading, data]);
 
   if (disable) {
@@ -34,7 +37,7 @@ const Dropdown = ({
           <Text>Loading</Text>
         ) : (
           <View style={styles.containerInput}>
-            <Text>{placeholder}:</Text>
+            <Text style={styles.text}>{placeholder}:</Text>
             <SearchableDropdown
               onItemSelect={(item) => {
                 handleDropdownOutput(item.name, query);

@@ -2,7 +2,9 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
+    paddingRight: 10,
+    paddingLeft: 10,
+    paddingTop: 3,
   },
   containerInput: {
     padding: 10,
@@ -10,14 +12,14 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   textInputStyle: {
-    padding: 12,
+    padding: 8,
     borderWidth: 1,
     borderColor: "#ccc",
     backgroundColor: "#FAF7F6",
     borderRadius: 5,
   },
   itemStyle: {
-    padding: 10,
+    padding: 8,
     backgroundColor: "#FAF9F8",
     borderColor: "#bbb",
     borderRadius: 5,
@@ -27,10 +29,11 @@ const styles = StyleSheet.create({
     color: "#222",
   },
   itemsContainerStyle: {
-    maxHeight: "90%",
+    maxHeight: "80%",
   },
   text: {
-    color: "#8acc4b",
+    color: "#222",
+    fontWeight: "bold",
   },
 });
 

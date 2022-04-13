@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { SafeAreaView } from "react-native";
+import { SafeAreaView, View, Text } from "react-native";
 import styles from "./Home.style";
 import Dropdown from "../../components/Dropdown/Dropdown";
+import Title from "../../components/Title/Title";
 
 const Home = () => {
   const [vehicleYearsData, setVehicleYearsData] = useState({
@@ -77,6 +78,7 @@ const Home = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <Title />
       <Dropdown
         placeholder={vehicleYearsData.placeholder}
         disable={vehicleYearsData.disable}
