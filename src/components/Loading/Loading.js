@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { View, Animated, Easing } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
 import styles from "react-native-tags/Tags/styles";
 
